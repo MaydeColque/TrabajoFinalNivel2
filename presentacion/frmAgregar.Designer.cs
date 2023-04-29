@@ -51,6 +51,12 @@
             this.lblAlertMarcaNoSelec = new System.Windows.Forms.Label();
             this.lblAlertCodigo = new System.Windows.Forms.Label();
             this.lblAlertNombre = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +72,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(40, 138);
@@ -80,7 +86,7 @@
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.Silver;
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblNombre.Location = new System.Drawing.Point(36, 113);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(85, 25);
@@ -93,7 +99,7 @@
             this.lblCodigo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.ForeColor = System.Drawing.Color.Silver;
+            this.lblCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblCodigo.Location = new System.Drawing.Point(35, 45);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(76, 25);
@@ -102,7 +108,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.Control;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(39, 72);
@@ -116,7 +122,7 @@
             this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.lblDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.Color.Silver;
+            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblDescripcion.Location = new System.Drawing.Point(36, 247);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(113, 25);
@@ -125,7 +131,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(40, 275);
@@ -140,7 +146,7 @@
             this.lblUrlImagen.BackColor = System.Drawing.Color.Transparent;
             this.lblUrlImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUrlImagen.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrlImagen.ForeColor = System.Drawing.Color.Silver;
+            this.lblUrlImagen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblUrlImagen.Location = new System.Drawing.Point(35, 179);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(78, 25);
@@ -149,7 +155,7 @@
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtUrlImagen.BackColor = System.Drawing.SystemColors.Control;
             this.txtUrlImagen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUrlImagen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUrlImagen.ForeColor = System.Drawing.SystemColors.AppWorkspace;
@@ -167,7 +173,7 @@
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPrecio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.ForeColor = System.Drawing.Color.Silver;
+            this.lblPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblPrecio.Location = new System.Drawing.Point(171, 45);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(68, 25);
@@ -176,7 +182,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPrecio.BackColor = System.Drawing.SystemColors.Control;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(176, 73);
@@ -190,7 +196,7 @@
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.Silver;
+            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblCategoria.Location = new System.Drawing.Point(361, 242);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(96, 25);
@@ -203,7 +209,7 @@
             this.lblMarca.BackColor = System.Drawing.Color.Transparent;
             this.lblMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.ForeColor = System.Drawing.Color.Silver;
+            this.lblMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
             this.lblMarca.Location = new System.Drawing.Point(363, 319);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(66, 25);
@@ -212,7 +218,7 @@
             // 
             // cBxCategoria
             // 
-            this.cBxCategoria.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cBxCategoria.BackColor = System.Drawing.SystemColors.Control;
             this.cBxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cBxCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,7 +232,7 @@
             // 
             // cBxMarca
             // 
-            this.cBxMarca.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cBxMarca.BackColor = System.Drawing.SystemColors.Control;
             this.cBxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBxMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cBxMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +246,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrange;
@@ -286,16 +292,16 @@
             // 
             // btnArchivo
             // 
-            this.btnArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
             this.btnArchivo.FlatAppearance.BorderSize = 0;
             this.btnArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchivo.IconChar = FontAwesome.Sharp.IconChar.FileImport;
             this.btnArchivo.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnArchivo.IconSize = 26;
+            this.btnArchivo.IconSize = 23;
             this.btnArchivo.Location = new System.Drawing.Point(295, 204);
             this.btnArchivo.Name = "btnArchivo";
-            this.btnArchivo.Size = new System.Drawing.Size(43, 35);
+            this.btnArchivo.Size = new System.Drawing.Size(40, 30);
             this.btnArchivo.TabIndex = 4;
             this.btnArchivo.UseVisualStyleBackColor = false;
             this.btnArchivo.Click += new System.EventHandler(this.btnArchivo_Click);
@@ -305,7 +311,7 @@
             this.lblFormatAlert.AutoSize = true;
             this.lblFormatAlert.BackColor = System.Drawing.Color.Transparent;
             this.lblFormatAlert.ForeColor = System.Drawing.Color.Brown;
-            this.lblFormatAlert.Location = new System.Drawing.Point(166, 94);
+            this.lblFormatAlert.Location = new System.Drawing.Point(165, 94);
             this.lblFormatAlert.Name = "lblFormatAlert";
             this.lblFormatAlert.Size = new System.Drawing.Size(201, 22);
             this.lblFormatAlert.TabIndex = 15;
@@ -360,11 +366,89 @@
             this.lblAlertNombre.Text = "*Obligatorio.";
             this.lblAlertNombre.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label1.Location = new System.Drawing.Point(36, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Nombre:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label2.Location = new System.Drawing.Point(35, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Código:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label3.Location = new System.Drawing.Point(36, 247);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 25);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Descripción:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label4.Location = new System.Drawing.Point(35, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Imagen:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label5.Location = new System.Drawing.Point(171, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Precio:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.label6.Location = new System.Drawing.Point(361, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 25);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Categoría:";
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(626, 503);
             this.Controls.Add(this.lblAlertNombre);
             this.Controls.Add(this.lblAlertCodigo);
@@ -377,20 +461,26 @@
             this.Controls.Add(this.cBxMarca);
             this.Controls.Add(this.cBxCategoria);
             this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUrlImagen);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.pictureBox);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -430,5 +520,11 @@
         private System.Windows.Forms.Label lblAlertMarcaNoSelec;
         private System.Windows.Forms.Label lblAlertCodigo;
         private System.Windows.Forms.Label lblAlertNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

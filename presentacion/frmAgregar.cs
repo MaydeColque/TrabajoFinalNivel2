@@ -28,6 +28,18 @@ namespace presentacion
         {
             InitializeComponent();
         }
+        public frmAgregar(Articulo articuloModificar)
+        {
+            InitializeComponent();
+            txtNombre.Text = articuloModificar.Nombre;
+            txtCodigo.Text = articuloModificar.Codigo;
+            txtPrecio.Text = $"{articuloModificar.Precio}";
+            txtUrlImagen.Text = articuloModificar.UrlImagen;
+            txtDescripcion.Text = articuloModificar.Descripcion;
+            cBxCategoria.Text = articuloModificar.Categoria.Descripcion;
+            cBxMarca.Text = articuloModificar.Marca.Descripcion;
+
+        }
         //Metodos
         private void inicializarElementos()
         {
@@ -121,7 +133,7 @@ namespace presentacion
             nuevoArticulo.UrlImagen = txtUrlImagen.Text;
             nuevoArticulo.Descripcion = txtDescripcion.Text;
             negocio.agregar(nuevoArticulo);
-            DialogResult resultado = MessageBox.Show("¿Deseas agregar más articulos?","Nuevo articulo guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            DialogResult resultado = MessageBox.Show("¿Deseas agregar más articulos?","Nuevo articulo guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 restrablecerElementos();
