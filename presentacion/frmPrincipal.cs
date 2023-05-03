@@ -26,7 +26,19 @@ namespace presentacion
         private List<Articulo> articulos;
 
 
-        //métodos       
+        //métodos
+        
+        private void Seleccionado()
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un artículo, por favor.");
+            }
+        }
         private void cargarDgv()
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -75,7 +87,8 @@ namespace presentacion
             {
                 return;
             }
-            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            //seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            Seleccionado();
 
 
             //Carga Info. en las labels de la sección "más detalles" del artículo.
@@ -163,7 +176,9 @@ namespace presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            frmAgregar ventanaModificar = new frmAgregar(seleccionado);
+            ventanaModificar.ShowDialog();
+            cargarDgv();
         }
 
         private void btnPapelera_Click(object sender, EventArgs e)
@@ -182,7 +197,7 @@ namespace presentacion
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (articulosEliminados != null && articulosEliminados.Count == 0)
+            if (articulosEliminados != null && articulosEliminados.Count != 0)
             {
                 DialogResult resultado = MessageBox.Show("Se detectaron artículos en la papelera ¿Deseas continuar con el cierre de la aplicación? Alerta: Recuerda que se eliminarán definitivamente.", "Confirmación cierre de la Aplicación...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.No)

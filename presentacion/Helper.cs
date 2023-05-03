@@ -28,9 +28,9 @@ namespace presentacion
                 decimal numConvertido = decimal.Parse(numero);
                 return numConvertido;
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                decimal vacio = 0;
+                decimal vacio = 0.00M;
                 return vacio;
             }
 

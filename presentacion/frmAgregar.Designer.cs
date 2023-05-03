@@ -189,6 +189,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(163, 32);
             this.txtPrecio.TabIndex = 1;
+            this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
             // 
             // lblCategoria
             // 

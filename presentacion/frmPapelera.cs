@@ -82,7 +82,7 @@ namespace presentacion
         }
         private void eliminarOrRecuperar(Articulo articulo, DataGridView dgvNombre, bool eliminar = false)
         {
-            if (!dgvVacíoOrNulo(dgvNombre))
+            if (!dgvVacíoOrNulo(dgvNombre) && articuloSeleccionado != null)
             {
 
                 if (eliminar)
@@ -102,6 +102,10 @@ namespace presentacion
                     MessageBox.Show("Articulo recuperado.");
                 }
                 //cargar();
+            }
+            else
+            {
+                MessageBox.Show("Ups seleccione un Artículo...","No se ha seleccionado ningún artículo.");
             }
         }
 
