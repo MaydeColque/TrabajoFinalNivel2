@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 using static presentacion.Helper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace presentacion
 {
@@ -20,7 +21,7 @@ namespace presentacion
         private bool banderaTxtUrlImagenEnter = true;
         private Articulo articulo = null;
         private bool camposCompletados = false;
-        private OpenFileDialog archivo = null;
+        //private OpenFileDialog archivo = null;
         public frmAgregar()
         {
             InitializeComponent();
@@ -29,10 +30,11 @@ namespace presentacion
         {
             InitializeComponent();
             articulo = articuloModificar;
+            this.Text = "Modificar datos del Artículo";
         }
         //Metodos
         
-        private void restrablecerElementos()
+        private void restablecerElementos()
         {
             txtCodigo.Text = "";
             txtNombre.Text = "";
@@ -90,7 +92,33 @@ namespace presentacion
                 camposCompletados = true;
             }
         }
-        
+        private bool esTexto(string cadena)
+        {
+            //Revisa si hay algún ítem que sea texto. Permite el ingreso del punto.
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsNumber(caracter) && caracter != '.')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void alertaTexto()
+        {
+            // Muestra el alert: si esta vacío notifica que se debe poner un precio sino avisa que solo se permiten números.
+            txtPrecio.BackColor = Color.LightCoral;
+            lblFormatAlert.Visible = true;
+            if (txtPrecio.Text == "")
+            {
+                lblFormatAlert.Text = "Ingrese un precio";
+            }
+            else
+            {
+                lblFormatAlert.Text = "Solo números...";
+            }
+        }
+
         //Eventos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -121,7 +149,7 @@ namespace presentacion
                     DialogResult resultado = MessageBox.Show("¿Deseas agregar más artículos?", "Nuevo Artículo Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
-                        restrablecerElementos();
+                        restablecerElementos();
                     }
                     else
                     {
@@ -222,33 +250,6 @@ namespace presentacion
             catch (FormatException)
             {
                 alertaTexto();
-            }
-        }
-
-        private bool esTexto(string cadena)
-        {
-            //Revisa si hay algún ítem que sea texto. Permite el ingreso del punto.
-            foreach (char caracter  in cadena)
-            {
-                if (!char.IsNumber(caracter) && caracter != '.')
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        private void alertaTexto()
-        {
-            // Muestra el alert: si esta vacío notifica que se debe poner un precio sino avisa que solo se permiten números.
-            txtPrecio.BackColor = Color.LightCoral;
-            lblFormatAlert.Visible = true;
-            if (txtPrecio.Text == "")
-            {
-                lblFormatAlert.Text = "Ingrese un precio";
-            }
-            else
-            {
-                lblFormatAlert.Text = "Solo números...";
             }
         }
     }

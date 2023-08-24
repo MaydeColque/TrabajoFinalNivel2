@@ -50,7 +50,7 @@
             this.btnEliminar.IconColor = System.Drawing.SystemColors.Menu;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(1029, 243);
+            this.btnEliminar.Location = new System.Drawing.Point(1056, 373);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(114, 36);
@@ -71,7 +71,7 @@
             this.btnRestaurar.IconColor = System.Drawing.SystemColors.Menu;
             this.btnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRestaurar.IconSize = 30;
-            this.btnRestaurar.Location = new System.Drawing.Point(1162, 243);
+            this.btnRestaurar.Location = new System.Drawing.Point(1189, 373);
             this.btnRestaurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(114, 36);
@@ -115,31 +115,31 @@
             this.dgvArticulosEliminados.RowHeadersWidth = 62;
             this.dgvArticulosEliminados.RowTemplate.Height = 28;
             this.dgvArticulosEliminados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulosEliminados.Size = new System.Drawing.Size(991, 273);
+            this.dgvArticulosEliminados.Size = new System.Drawing.Size(956, 380);
             this.dgvArticulosEliminados.TabIndex = 20;
             this.dgvArticulosEliminados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulosEliminados_CellClick);
             this.dgvArticulosEliminados.SelectionChanged += new System.EventHandler(this.dgvArticulosEliminados_SelectionChanged);
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(1029, 12);
+            this.pictureBox.Location = new System.Drawing.Point(995, 26);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(247, 214);
+            this.pictureBox.Size = new System.Drawing.Size(359, 308);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 21;
             this.pictureBox.TabStop = false;
             // 
-            // frmRecuperar
+            // frmPapelera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 294);
+            this.ClientSize = new System.Drawing.Size(1370, 443);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.dgvArticulosEliminados);
             this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.btnEliminar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmRecuperar";
+            this.Name = "frmPapelera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperar Artículo";
             this.Load += new System.EventHandler(this.frmRecuperar_Load);

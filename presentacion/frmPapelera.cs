@@ -27,13 +27,6 @@ namespace presentacion
         private Articulo articuloSeleccionado;
         private int inicio = 0;
 
-
-
-        //Dgv no permite que se eliminen filas, a menos que uses la interface IBindingList
-        //Si hay una fila seleccionada, sustrae el indice de la misma y el método elimina filas según su indice.
-        //dgvNombre.Rows.RemoveAt(dgvNombre.Rows.IndexOf(dgvNombre.CurrentRow));
-
-
         //métodos
         private bool ListaVacia()
         {
@@ -69,8 +62,9 @@ namespace presentacion
         private void configDgv()
         {
             dgvArticulosEliminados.Columns["UrlImagen"].Visible = false;
+            dgvArticulosEliminados.Columns["Id"].Visible = false;
             dgvArticulosEliminados.Columns["Nombre"].Width = 210;
-            dgvArticulosEliminados.Columns["Descripcion"].Width = 260;
+            dgvArticulosEliminados.Columns["Descripcion"].Width = 250;
         }
         private bool dgvVacíoOrNulo(DataGridView nombre)
         {
@@ -141,8 +135,12 @@ namespace presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            eliminarOrRecuperar(articuloSeleccionado, dgvArticulosEliminados,true);
-            cargar();
+            DialogResult resultado = MessageBox.Show("El artículo se eliminará definitivamente ¿Desea continuar?","Atención...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                eliminarOrRecuperar(articuloSeleccionado, dgvArticulosEliminados, true);
+                cargar();
+            }
         }       
 
         private void btnRestaurar_Click(object sender, EventArgs e)

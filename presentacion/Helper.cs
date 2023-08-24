@@ -20,20 +20,20 @@ namespace presentacion
                 nombreTool.Load("http://www.coalitionrc.com/wp-content/uploads/2017/01/placeholder.jpg");
             }
         }
-        public static decimal formatoPrecio( string numero)
-        {
-            try
-            {
-                numero += ".00";
-                decimal numConvertido = decimal.Parse(numero);
-                return numConvertido;
-            }
-            catch (FormatException)
-            {
-                decimal vacio = 0.00M;
-                return vacio;
-            }
+        //public static decimal formatoPrecio( string numero)
+        //{
+        //    try
+        //    {
+        //        numero += ".00";
+        //        decimal numConvertido = decimal.Parse(numero);
+        //        return numConvertido;
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        decimal vacio = 0.00M;
+        //        return vacio;
+        //    }
 
-        }
+        //}
     }
 }

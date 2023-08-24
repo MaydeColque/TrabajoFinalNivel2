@@ -156,6 +156,34 @@ namespace negocio
             { datos.cerrarConexion(); }
 
         }
-        
+        /*
+        public List<Articulo> filtrar(int id, bool marca = false)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "select Codigo, Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, ImagenUrl, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca AND IdCategoria = C.Id AND ";
+                if (marca)
+                {
+                    consulta += "IdMarca = @idMarca";
+                    datos.setQuery(consulta);
+                    datos.setParametro("@idMarca", id);
+                }
+                else
+                {
+                    consulta += "IdCategoria = @idCategoria";
+                    datos.setQuery(consulta);
+                    datos.setParametro("@idCategoria", id);
+                }
+                datos.ejecutarInstruccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion();}
+        }
+        */
     }
 }

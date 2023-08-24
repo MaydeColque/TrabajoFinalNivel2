@@ -22,22 +22,12 @@ namespace presentacion
         public frmDetalle(Articulo articuloSeleccionado)
         {
             InitializeComponent();
-            this.articuloSeleccionado= articuloSeleccionado;
+            this.articuloSeleccionado = articuloSeleccionado;
         }
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-            //Cuando se cierra la ventana de agregar, retorna null.
-
-            //if (dgvArticulos.CurrentRow == null)
-            //{
-            //    return;
-            //}
-            
-            // Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             cargarImagen(pictureBoxArticulo, articuloSeleccionado.UrlImagen);
 
-            //Carga Info. en las labels de más detalles del artículo.
-            //Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             string codigo = $"# {articuloSeleccionado.Codigo}";
             string precio = $"$ {articuloSeleccionado.Precio.ToString("0.00")}";
 
@@ -49,5 +39,10 @@ namespace presentacion
             Categoria.Text = articuloSeleccionado.Categoria.ToString();
             Precio.Text = precio;
         }
-    }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }    
 }

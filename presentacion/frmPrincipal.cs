@@ -54,32 +54,52 @@ namespace presentacion
                 btnPapelera.Enabled = true;
                 dgvArticulos.DataSource = negocio.listarArticulos(articulosEliminados);
             }
+            dgvEstilo();
+        }
+        private void dgvEstilo()
+        {
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Width = 280;
             dgvArticulos.Columns["Categoria"].Width = 150;
-            dgvArticulos.Columns["Precio"].Width = 150;
+            if (dgvArticulos.Columns["Precio"] is DataGridViewColumn columnaPrecios)
+            {
+                columnaPrecios.Width = 150;
+                columnaPrecios.DefaultCellStyle.Format = "N3"; // "N4" muestra 4 decimales.
+            }
             dgvArticulos.Columns["Marca"].Width = 150;
             dgvArticulos.Columns["Nombre"].Width = 220;
-
-            //dataGridViewPrueba.DataSource = articulos;
+        }
+        private void verDetalle()
+        {
+            frmDetalle ventanaDetalle = new frmDetalle(seleccionado);
+            ventanaDetalle.ShowDialog();
+        }
+        private void dgvNewDataSource(DataGridView dgvName, List<Articulo> newlist)
+        {
+            dgvName.DataSource = null;
+            dgvName.DataSource = newlist;
+            dgvEstilo();
         }
 
         //eventos
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            //panelDgvArticulos.Location = new Point(140, 70);
-            //DataGridView dgvArticulos = this.dgvArticulos;
-            //dgvArticulos.Location = new Point(140, 70);
-            //this.Size = new Size(1040,451);
-
-        }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             cargarDgv();
-        }
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            cBxCategoria.ValueMember = "Id";
+            cBxCategoria.DisplayMember = "Descripcion";
+            cBxCategoria.DataSource = categoria.listarCategorias();
+            cBxCategoria.SelectedIndex = -1;
 
+            MarcaNegocio marca = new MarcaNegocio();
+            cBxMarca.ValueMember = "Id";
+            cBxMarca.DisplayMember = "Descripcion";
+            cBxMarca.DataSource = marca.listarMarcas();
+            cBxMarca.SelectedIndex = -1;
+
+        }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             //Cuando se cierra la ventana de agregar, retorna null.
@@ -89,33 +109,44 @@ namespace presentacion
             }
             //seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             Seleccionado();
-
-
-            //Carga Info. en las labels de la sección "más detalles" del artículo.
-            cargarImagen(pictureBoxArticulo, seleccionado.UrlImagen);
-            //Articulo artSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            string codigo = $"# {seleccionado.Codigo}";
-            string precio = $"$ {seleccionado.Precio.ToString("0.00")}";
-
-            Id.Text = $"{seleccionado.Id}";
-            Codigo.Text = codigo;
-            Marca.Text = seleccionado.Marca.Descripcion;
-            Nombre.Text = seleccionado.Nombre;
-            Descripcion.Text = seleccionado.Descripcion;
-            Categoria.Text = seleccionado.Categoria.ToString();
-            Precio.Text = precio;
+            cargarImagen(pBxInfo, seleccionado.UrlImagen);
+            lblCodigoInfo.Text = seleccionado.Codigo;
+            lblCategoriaInfo.Text = seleccionado.Categoria.Descripcion;
+            lblMarcaInfo.Text = seleccionado.Marca.Descripcion;
+            string precio = $"{seleccionado.Precio}";
+            lblPrecioInfo.Text = precio;
         }
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-        }
+            List<Articulo> listaArticulosFiltrados = new List<Articulo>();
+            string articulo = txtBuscar.Text;
+            if (articulo != "" && articulo != "Buscar")
+            {
+                listaArticulosFiltrados = articulos.FindAll(art => art.Nombre.ToLower().Contains(articulo.ToLower()) || art.Categoria.Descripcion.ToLower().Contains(articulo.ToLower()) || art.Marca.Descripcion.ToLower().Contains(articulo.ToLower()));
+            }
+            else
+            {
+                listaArticulosFiltrados = articulos;
+            }
 
-        private void txtBuscar_MouseClick(object sender, MouseEventArgs e)
+            dgvNewDataSource(dgvArticulos, listaArticulosFiltrados);
+        }
+        private void txtBuscar_Enter(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
-            txtBuscar.ForeColor = Color.Black;
+            if (txtBuscar.Text == "  Buscar")
+            {
+                txtBuscar.Text = "";
+            }
         }
 
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                txtBuscar.Text = "  Buscar";
+                dgvNewDataSource(dgvArticulos, articulos);
+            }
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregar ventana = new frmAgregar();
@@ -123,41 +154,18 @@ namespace presentacion
             cargarDgv();
             
         }
-
         private void dgvArticulos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmDetalle ventana = new frmDetalle(seleccionado);
-            ventana.ShowDialog();
+            verDetalle();
 
         }
-
-        private void frmPrincipal_SizeChanged(object sender, EventArgs e)
-        {
-            int minWidth = MinimumSize.Width;
-            int actualWidth = Size.Width;
-
-            if (actualWidth > minWidth)
-            {
-                btnAgregar.Location = new Point(25, 705);
-                btnFiltrar.Location = new Point(98, 810);
-                btnPapelera.Location = new Point(168, 705);
-                panelDetalleArticulo.Visible = true;
-            }
-            else
-            {
-                btnAgregar.Location = new Point(25, 635);
-                btnFiltrar.Location = new Point(98, 560);
-                btnPapelera.Location = new Point(168, 635);
-                panelDetalleArticulo.Visible = false;
-            }
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //ArticuloNegocio eliminar = new ArticuloNegocio();
             string nombre = seleccionado.Nombre;
-            DialogResult resultado = MessageBox.Show($"¿Deseas eliminar {nombre}? Nota: Podrás recuperar el elemento, haciendo clic en el botón Recuperar. Pero se eliminarán definitivamente una vez que cierres la aplicación. ",$"Eliminando {nombre}...",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            DialogResult resultado = MessageBox.Show($"¿Deseas eliminar {nombre}? Nota: Podrás recuperar el elemento, haciendo clic en la Papelera. Pero se eliminarán definitivamente una vez que cierres la aplicación. ",$"Eliminando {nombre}...",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
             if (resultado == DialogResult.Yes)
             {
                 if (articulosEliminados != null)
@@ -215,5 +223,60 @@ namespace presentacion
             }
         }
 
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            verDetalle();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (cBxCategoria.SelectedIndex != -1 || cBxMarca.SelectedIndex != -1)
+            {
+                string Marca = "";
+                string Categoria = "";
+                List<Articulo> listaFiltro = new List<Articulo>();
+
+                if (cBxMarca.SelectedIndex != -1 && cBxCategoria.SelectedIndex != -1)
+                {
+                    Marca = cBxMarca.SelectedItem.ToString();
+                    Categoria = cBxCategoria.SelectedItem.ToString();
+
+                    listaFiltro = articulos.FindAll(art => art.Categoria.Descripcion.Contains(Categoria) && art.Marca.Descripcion.Contains(Marca));
+                }
+                else if(cBxCategoria.SelectedIndex != -1)
+                {
+                    Categoria = cBxCategoria.SelectedItem.ToString();
+
+                    listaFiltro = articulos.FindAll(art => art.Categoria.Descripcion.Contains(Categoria));
+                }
+                else
+                {
+                    Marca = cBxMarca.SelectedItem.ToString();
+                    listaFiltro = articulos.FindAll(art => art.Marca.Descripcion.Contains(Marca));
+                }
+
+                dgvNewDataSource(dgvArticulos, listaFiltro);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un criterio para filtrar.");
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (cBxCategoria.SelectedIndex != -1 || cBxMarca.SelectedIndex != -1)
+            {
+                cBxMarca.SelectedIndex = -1;
+                cBxCategoria.SelectedIndex = -1;
+                dgvNewDataSource(dgvArticulos, articulos);
+            }
+        }
+
+        private void btnEliminarBusqueda_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "  Buscar";
+            dgvNewDataSource(dgvArticulos, articulos);
+        }
     }
 }

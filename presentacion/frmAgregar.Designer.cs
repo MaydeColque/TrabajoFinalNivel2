@@ -134,7 +134,7 @@
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(40, 275);
+            this.txtDescripcion.Location = new System.Drawing.Point(41, 275);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(299, 101);
             this.txtDescripcion.TabIndex = 5;
@@ -259,7 +259,7 @@
             this.btnAceptar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAceptar.IconSize = 32;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(57, 440);
+            this.btnAceptar.Location = new System.Drawing.Point(334, 438);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(125, 39);
             this.btnAceptar.TabIndex = 8;
@@ -282,7 +282,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 30;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(203, 440);
+            this.btnCancelar.Location = new System.Drawing.Point(469, 438);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 39);
             this.btnCancelar.TabIndex = 9;
@@ -450,7 +450,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(626, 503);
+            this.ClientSize = new System.Drawing.Size(626, 506);
             this.Controls.Add(this.lblAlertNombre);
             this.Controls.Add(this.lblAlertCodigo);
             this.Controls.Add(this.lblAlertMarcaNoSelec);
