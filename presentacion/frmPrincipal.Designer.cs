@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblArticulos = new System.Windows.Forms.Label();
@@ -37,7 +38,7 @@
             this.btnPapelera = new FontAwesome.Sharp.IconButton();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.groupFiltarMarcaCategoria = new System.Windows.Forms.GroupBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnQuitarCriterios = new FontAwesome.Sharp.IconButton();
             this.btnFiltrar = new FontAwesome.Sharp.IconButton();
             this.cBxMarca = new System.Windows.Forms.ComboBox();
             this.lblMostrarCategoria = new System.Windows.Forms.Label();
@@ -56,6 +57,11 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnVerDetalle = new FontAwesome.Sharp.IconButton();
+            this.toolTipPapelera = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipEliminar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipVerDetalles = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipModificar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipQuitarCriterios = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.groupFiltarMarcaCategoria.SuspendLayout();
@@ -128,7 +134,7 @@
             this.txtBuscar.MaximumSize = new System.Drawing.Size(427, 28);
             this.txtBuscar.MinimumSize = new System.Drawing.Size(197, 28);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(250, 28);
+            this.txtBuscar.Size = new System.Drawing.Size(250, 37);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.Text = "  Buscar";
             this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Enter);
@@ -166,29 +172,30 @@
             // 
             // dgvArticulos
             // 
-            this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvArticulos.Location = new System.Drawing.Point(334, 75);
@@ -207,7 +214,9 @@
             // 
             // groupFiltarMarcaCategoria
             // 
-            this.groupFiltarMarcaCategoria.Controls.Add(this.iconButton1);
+            this.groupFiltarMarcaCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupFiltarMarcaCategoria.Controls.Add(this.btnQuitarCriterios);
             this.groupFiltarMarcaCategoria.Controls.Add(this.btnFiltrar);
             this.groupFiltarMarcaCategoria.Controls.Add(this.cBxMarca);
             this.groupFiltarMarcaCategoria.Controls.Add(this.lblMostrarCategoria);
@@ -221,32 +230,32 @@
             this.groupFiltarMarcaCategoria.TabIndex = 20;
             this.groupFiltarMarcaCategoria.TabStop = false;
             // 
-            // iconButton1
+            // btnQuitarCriterios
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnQuitarCriterios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.DarkRed;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.SeaShell;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ControlLight;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(194, 198);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton1.MaximumSize = new System.Drawing.Size(125, 43);
-            this.iconButton1.MinimumSize = new System.Drawing.Size(40, 43);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(40, 43);
-            this.iconButton1.TabIndex = 31;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnQuitarCriterios.BackColor = System.Drawing.Color.DarkRed;
+            this.btnQuitarCriterios.FlatAppearance.BorderSize = 0;
+            this.btnQuitarCriterios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnQuitarCriterios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.btnQuitarCriterios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarCriterios.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarCriterios.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnQuitarCriterios.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnQuitarCriterios.IconColor = System.Drawing.SystemColors.ControlLight;
+            this.btnQuitarCriterios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQuitarCriterios.IconSize = 30;
+            this.btnQuitarCriterios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuitarCriterios.Location = new System.Drawing.Point(194, 198);
+            this.btnQuitarCriterios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnQuitarCriterios.MaximumSize = new System.Drawing.Size(125, 43);
+            this.btnQuitarCriterios.MinimumSize = new System.Drawing.Size(40, 43);
+            this.btnQuitarCriterios.Name = "btnQuitarCriterios";
+            this.btnQuitarCriterios.Size = new System.Drawing.Size(40, 43);
+            this.btnQuitarCriterios.TabIndex = 31;
+            this.btnQuitarCriterios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuitarCriterios.UseVisualStyleBackColor = false;
+            this.btnQuitarCriterios.Click += new System.EventHandler(this.btnQuitarCriterios_Click);
             // 
             // btnFiltrar
             // 
@@ -283,8 +292,11 @@
             this.cBxMarca.FormattingEnabled = true;
             this.cBxMarca.Location = new System.Drawing.Point(16, 76);
             this.cBxMarca.Name = "cBxMarca";
-            this.cBxMarca.Size = new System.Drawing.Size(207, 34);
+            this.cBxMarca.Size = new System.Drawing.Size(218, 34);
             this.cBxMarca.TabIndex = 29;
+            // 
+            // lblMostrarCategoria
+            // 
             this.lblMostrarCategoria.AutoSize = true;
             this.lblMostrarCategoria.Location = new System.Drawing.Point(16, 114);
             this.lblMostrarCategoria.Name = "lblMostrarCategoria";
@@ -318,11 +330,13 @@
             this.cBxCategoria.FormattingEnabled = true;
             this.cBxCategoria.Location = new System.Drawing.Point(16, 139);
             this.cBxCategoria.Name = "cBxCategoria";
-            this.cBxCategoria.Size = new System.Drawing.Size(207, 34);
+            this.cBxCategoria.Size = new System.Drawing.Size(218, 34);
             this.cBxCategoria.TabIndex = 30;
             // 
             // panelArtInfo
             // 
+            this.panelArtInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelArtInfo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panelArtInfo.Controls.Add(this.btnEliminarBusqueda);
             this.panelArtInfo.Controls.Add(this.txtBuscar);
@@ -405,6 +419,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pBxInfo);
@@ -507,6 +523,10 @@
             this.btnVerDetalle.UseVisualStyleBackColor = false;
             this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
             // 
+            // toolTipPapelera
+            // 
+            this.toolTipPapelera.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -520,13 +540,12 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvArticulos);
-            this.Controls.Add(this.btnPapelera);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnPapelera);
             this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1470, 678);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -564,7 +583,7 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnVerDetalle;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnQuitarCriterios;
         private System.Windows.Forms.Panel panelArtInfo;
         private System.Windows.Forms.Label lblCategoriaInfo;
         private System.Windows.Forms.PictureBox pBxInfo;
@@ -574,6 +593,11 @@
         private System.Windows.Forms.Label lblMarcaInfo;
         private System.Windows.Forms.Label lblCodigoInfo;
         private System.Windows.Forms.Button btnEliminarBusqueda;
+        private System.Windows.Forms.ToolTip toolTipPapelera;
+        private System.Windows.Forms.ToolTip toolTipEliminar;
+        private System.Windows.Forms.ToolTip toolTipVerDetalles;
+        private System.Windows.Forms.ToolTip toolTipModificar;
+        private System.Windows.Forms.ToolTip toolTipQuitarCriterios;
     }
 }
 

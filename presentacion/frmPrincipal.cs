@@ -81,12 +81,33 @@ namespace presentacion
             dgvName.DataSource = newlist;
             dgvEstilo();
         }
-
+        private void tooltipControl(Control controlNombre, ToolTip toolTipNombre, string txtActivo, string txtInactivo)
+        {
+            
+            if (controlNombre.Enabled)
+            {
+                toolTipNombre.SetToolTip(controlNombre, txtActivo);
+            }
+            else
+            {
+                toolTipNombre.SetToolTip(controlNombre, txtInactivo);
+            }
+        }
         //eventos
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            //Config texto para tooltips
+            toolTipPapelera.SetToolTip(btnPapelera, "Papelera");
+            toolTipEliminar.SetToolTip(btnEliminar, "Eliminar");
+            toolTipModificar.SetToolTip(btnModificar, "Modificar");
+            toolTipVerDetalles.SetToolTip(btnVerDetalle, "Ver Artículo");
+            toolTipQuitarCriterios.SetToolTip(btnQuitarCriterios, "Borrar Criterios");
+
+            //Carga de la tabla
             cargarDgv();
+
+            //Config de la tabla
             CategoriaNegocio categoria = new CategoriaNegocio();
             cBxCategoria.ValueMember = "Id";
             cBxCategoria.DisplayMember = "Descripcion";
@@ -122,7 +143,7 @@ namespace presentacion
             string articulo = txtBuscar.Text;
             if (articulo != "" && articulo != "Buscar")
             {
-                listaArticulosFiltrados = articulos.FindAll(art => art.Nombre.ToLower().Contains(articulo.ToLower()) || art.Categoria.Descripcion.ToLower().Contains(articulo.ToLower()) || art.Marca.Descripcion.ToLower().Contains(articulo.ToLower()));
+                listaArticulosFiltrados = articulos.FindAll(art => art.Nombre.ToLower().Contains(articulo.ToLower()) || art.Categoria.Descripcion.ToLower().Contains(articulo.ToLower()) || art.Marca.Descripcion.ToLower().Contains(articulo.ToLower()) || art.Codigo.ToLower().Contains(articulo.ToLower()));
             }
             else
             {
@@ -263,7 +284,7 @@ namespace presentacion
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnQuitarCriterios_Click(object sender, EventArgs e)
         {
             if (cBxCategoria.SelectedIndex != -1 || cBxMarca.SelectedIndex != -1)
             {
@@ -278,5 +299,6 @@ namespace presentacion
             txtBuscar.Text = "  Buscar";
             dgvNewDataSource(dgvArticulos, articulos);
         }
+
     }
 }

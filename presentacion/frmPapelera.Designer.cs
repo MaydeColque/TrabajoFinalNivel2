@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.dgvArticulosEliminados = new System.Windows.Forms.DataGridView();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTipEliminar = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipRecuperar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulosEliminados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -154,5 +157,7 @@
         private FontAwesome.Sharp.IconButton btnRestaurar;
         private System.Windows.Forms.DataGridView dgvArticulosEliminados;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ToolTip toolTipEliminar;
+        private System.Windows.Forms.ToolTip toolTipRecuperar;
     }
 }

@@ -86,14 +86,14 @@ namespace presentacion
                     negocio.eliminar(id);
                     articulosEliminados.Remove(articulo);
                     dgvReiniciar(dgvNombre);
-                    MessageBox.Show("El articulo se ha eliminado.");
+                    MessageBox.Show("El artículo se ha eliminado.");
                 }
                 else
                 {
                     
                     articulosEliminados.Remove(articulo);
                     dgvReiniciar(dgvNombre);
-                    MessageBox.Show("Articulo recuperado.");
+                    MessageBox.Show("Artículo recuperado.");
                 }
                 //cargar();
             }
@@ -151,7 +151,12 @@ namespace presentacion
 
         private void frmRecuperar_Load(object sender, EventArgs e)
         {
+            //Config texto tooltips
+            toolTipEliminar.SetToolTip(btnEliminar, "Eliminar");
+            toolTipRecuperar.SetToolTip(btnRestaurar, "Restaurar");
+            //Carga la tabla
             cargar();
+            //Carga la imagen
             cargarImagen(pictureBox, "https://st.depositphotos.com/1537427/1889/v/950/depositphotos_18898623-stock-illustration-recycle-bin-full-of-crumpled.jpg");
         }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelDetalleArticulo = new System.Windows.Forms.Panel();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.Precio = new System.Windows.Forms.Label();
             this.Categoria = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.pictureBoxArticulo = new System.Windows.Forms.PictureBox();
             this.lblId = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.Label();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panelDetalleArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,30 @@
             this.panelDetalleArticulo.Name = "panelDetalleArticulo";
             this.panelDetalleArticulo.Size = new System.Drawing.Size(505, 540);
             this.panelDetalleArticulo.TabIndex = 14;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.btnCancelar.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 30;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(371, 480);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(111, 41);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cerrar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Precio
             // 
@@ -192,30 +216,6 @@
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(0, 22);
             this.Id.TabIndex = 3;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.btnCancelar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 30;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(371, 480);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 41);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cerrar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmDetalle
             // 
